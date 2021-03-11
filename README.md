@@ -38,3 +38,26 @@ inv <- x$getInverse()
   x$setInverse(inv)
   inv
 }
+## Testing my program
+
+source("makeCacheMatrix.R")
+> mat <- makeCacheMatrix(matrix(1:4, nrow= 2, ncol= 2))
+> mat$get()
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> mat$getInverse()
+NULL
+> cacheSolve(mat)
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> cacheSolve(mat)
+getting cached data
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> mat$getInverse()
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
